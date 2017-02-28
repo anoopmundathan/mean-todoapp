@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var router = require('./api');
 
 var app = express();
 
@@ -8,6 +9,11 @@ var app = express();
  * Serve static files from public folder
  */
 app.use('/', express.static('public'));
+
+/**
+ * Define routes
+ */
+app.use('/api', router);
 
 /**
  * Set port
