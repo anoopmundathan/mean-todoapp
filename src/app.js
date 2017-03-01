@@ -1,9 +1,11 @@
 'use strict';
 
 var express = require('express');
-var router = require('./api');
+var path = require('path');
 
 var app = express();
+
+require('./database');
 
 /**
  * Serve static files from public folder
@@ -11,9 +13,16 @@ var app = express();
 app.use('/', express.static('public'));
 
 /**
+ * Vendor scripts
+ */
+app.get('/vendor/angular.js', function(req,res) {
+	res.sendFile(path.join(__dirname, '../node_modules', 'angular', 'angular.js'));
+});
+
+/**
  * Define routes
  */
-app.use('/api', router);
+app.use('/api', require('./api'));
 
 /**
  * Set port
