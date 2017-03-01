@@ -6,7 +6,7 @@ var path = require('path');
 var app = express();
 
 require('./database');
-
+require('./seed');
 /**
  * Serve static files from public folder
  */
