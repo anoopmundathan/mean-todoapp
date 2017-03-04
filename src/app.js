@@ -1,5 +1,7 @@
 'use strict';
 
+debugger;
+
 var express = require('express');
 var path = require('path');
 
@@ -15,9 +17,9 @@ app.use('/', express.static('public'));
 /**
  * Vendor scripts
  */
-app.get('/vendor/angular.js', function(req,res) {
-	res.sendFile(path.join(__dirname, '../node_modules', 'angular', 'angular.js'));
-});
+// app.get('/vendor/angular.js', function(req,res) {
+// 	res.sendFile(path.join(__dirname, '../node_modules', 'angular', 'angular.js'));
+// });
 
 /**
  * Define routes

@@ -1,12 +1,18 @@
 'use strict';
 
 var express = require('express');
+var Todo = require('../models/todos');
 
 var router = express.Router();
 
 router.route('/todos')
-  .get(function(req, res){
-    res.send('get todos');
+  .get(function(req, res, next){
+    Todo.find({})
+      .exec(function(err, todos) {
+        if (!err && todos.length) {
+          res.json(todos);
+        }
+      })
   })
   .post(function(req, res) {
     res.send('post todos');
@@ -21,10 +27,10 @@ router.route('/todos/:id')
   });
 
 
-// // GET /api/todos
-// router.get('/todos', function(req, res) {
-//   res.send('GETs TODOS');
-// });
+// GET /api/todos
+router.get('/todos', function(req, res) {
+  res.send('GETs TODOS');
+});
 //
 // // POST /api/todos
 // router.post('/todos', function(req, res) {
