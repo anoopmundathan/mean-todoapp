@@ -38,7 +38,6 @@ router.route('/todos/:id')
     });
   })
   .delete(function(req, res) {
-    res.send('delete todos');
   });
 
 module.exports = router;
