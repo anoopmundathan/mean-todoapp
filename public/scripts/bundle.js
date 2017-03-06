@@ -33220,11 +33220,18 @@ $provide.value("$locale", {
 var angular = __webpack_require__(0);
 
 angular.module('todoListApp', [])
-	.directive('helloWorld', function() {
-		return {
-			template: 'helloWorld directive',
-			restrict: 'E'
+	.controller('mainCtrl', function($scope) {
+		$scope.helloWorld = function() {
+			console.log('Hello there, This is from mainCtrl');
 		}
+	})
+	.controller('secondCtrl', function($scope) {
+		$scope.secondHello = function() {
+
+		}
+	})
+	.controller('siblingCtrl', function($scope) {
+		$scope.hi = "Sibling Controller";
 	});
 
 /***/ })

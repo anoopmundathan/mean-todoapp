@@ -5,10 +5,22 @@
 		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		 <meta http-equiv="x-ua-compatible" content="ie=edge">
 		 <title>My App</title>
-	 </head>
-	 <body ng-app="todoListApp">
-	 	<hello-world></hello-world>
-	 	<div hello-world></div>
-		 <script type="text/javascript" src="scripts/bundle.js"></script>
-	 </body>
+	</head>
+	<body ng-app="todoListApp">
+		<h1>MY TODOs</h1>
+		<div ng-controller="mainCtrl" class="list">
+			<input type="checkbox">
+			<label for="" class="editing-label" ng-click="helloWorld()">Walk</label>
+			<input type="text" class="editing-label">
+			<div class="actions" ng-controller="secondCtrl">
+				<a href="" ng-click="secondHello()">Save</a>
+				<a href="">Edit</a>
+				<a href="" class="delete">Delete</a>
+			</div>
+		</div>
+		<div ng-controller="siblingCtrl">
+			{{hi}}
+		</div>
+		<script type="text/javascript" src="scripts/bundle.js"></script>
+	</body>
  </html>
