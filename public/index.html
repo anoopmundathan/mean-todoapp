@@ -10,11 +10,11 @@
 		<h1>MY TODOs</h1>
 		<div ng-controller="mainCtrl" class="list">
 			<input type="checkbox" ng-model="todo.completed">
-			<label for="" class="editing-label" ng-click="helloWorld()">{{todo.name}}</label>
-			<input type="text" class="editing-label" ng-model="todo.name">
+			<label for="" class="editing-label" ng-hide="editing">{{todo.name}}</label>
+			<input type="text" class="editing-label" ng-model="todo.name" ng-show="editing">
 			<div class="actions">
 				<a href="">Save</a>
-				<a href="">Edit</a>
+				<a href="" ng-click = "editing = !editing">Edit</a>
 				<a href="" class="delete">Delete</a>
 			</div>
 		</div>
