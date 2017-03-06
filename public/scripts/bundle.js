@@ -33219,7 +33219,13 @@ $provide.value("$locale", {
 
 var angular = __webpack_require__(0);
 
-angular.module('todoListApp', []);
+angular.module('todoListApp', [])
+	.directive('helloWorld', function() {
+		return {
+			template: 'helloWorld directive',
+			restrict: 'E'
+		}
+	});
 
 /***/ })
 /******/ ]);
