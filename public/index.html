@@ -9,17 +9,14 @@
 	<body ng-app="todoListApp">
 		<h1>MY TODOs</h1>
 		<div ng-controller="mainCtrl" class="list">
-			<input type="checkbox">
-			<label for="" class="editing-label" ng-click="helloWorld()">Walk</label>
-			<input type="text" class="editing-label">
-			<div class="actions" ng-controller="secondCtrl">
-				<a href="" ng-click="secondHello()">Save</a>
+			<input type="checkbox" ng-model="todo.completed">
+			<label for="" class="editing-label" ng-click="helloWorld()">{{todo.name}}</label>
+			<input type="text" class="editing-label" ng-model="todo.name">
+			<div class="actions">
+				<a href="">Save</a>
 				<a href="">Edit</a>
 				<a href="" class="delete">Delete</a>
 			</div>
-		</div>
-		<div ng-controller="siblingCtrl">
-			{{hi}}
 		</div>
 		<script type="text/javascript" src="scripts/bundle.js"></script>
 	</body>
