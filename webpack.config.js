@@ -3,12 +3,15 @@ var path = require('path');
 
 module.exports = {
 	context: __dirname + '/app',
-  	entry: "./app.js",
+	entry: {
+        app: './app.js',
+        vendor: ['angular']
+    },
   	output: {
   		path: __dirname + '/public/scripts',
-    	filename: 'bundle.js'
-  	}, 
+    	filename: 'todo.bundle.js'
+  	},
   	plugins: [
-  		new webpack.optimize.UglifyJsPlugin()
-  	]
+        new webpack.optimize.CommonsChunkPlugin({ name: "vendor", filename: "vendor.bundle.js"})
+    ]
 }
