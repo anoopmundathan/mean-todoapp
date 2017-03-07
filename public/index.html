@@ -8,20 +8,30 @@
 		 <title>My App</title>
 	</head>
 	<body ng-app="todoListApp">
-		<h1>MY TODOs</h1>
-		<div ng-controller="mainCtrl" class="list">
-			
-			<!-- List all TODO Items -->
-			<div ng-repeat="todo in todos" class="items">		
-				<input type="checkbox" ng-model="todo.completed">
-				<label for="" class="editing-label" ng-hide="editing">{{todo.name}}</label>
-				<input type="text" class="editing-label" ng-blur="editing=false" ng-model="todo.name" ng-show="editing" ng-change="todo.edited=true">
-				<a href="" ng-click="helloConsole()">Save</a>
-				<a href="" ng-click = "editing = !editing" ng-class="{header: editing}">Edit</a>
-				<a href="" class="delete">Delete</a>
-			</div>
+		<h1 class="todo-header">MY TODOs</h1>
 
-		</div>
+		<div ng-controller="mainCtrl" class="todo-list">
+			
+			<div ng-repeat="todo in todos" class="todo-items">
+
+				<div class="todo-items-1">
+					<input type="checkbox" ng-model="todo.completed">
+					<label for="" class="editing-label" ng-hide="editing">{{todo.name}}</label>
+					<input type="text" class="editing-label" ng-blur="editing=false" ng-model="todo.name" ng-show="editing" ng-change="todo.edited=true">
+				</div>
+
+				<div class="todo-items-2">
+					<a href="">Save</a>
+					<a href="" ng-click = "editing = !editing" ng-class="{header: editing}">Edit</a>
+					<a href="" class="delete">Delete</a>	
+				</div>
+
+			</div>
+			<!-- End of todo-items -->
+
+		</div> 
+		<!-- End of todo-list -->
+
 		<script type="text/javascript" src="scripts/vendor.bundle.js"></script>
 		<script type="text/javascript" src="scripts/todo.bundle.js"></script>
 	</body>
