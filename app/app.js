@@ -3,17 +3,19 @@ var angular = require('angular');
 angular.module('todoListApp', [])
 	.controller('mainCtrl', function($scope, dataService) {
 		
-		$scope.helloConsole = dataService.helloConsole;
+		dataService.getTodos(function(response) {
+			$scope.todos = response.data;
+		});
 
-		$scope.todos = [
-			{name: "Study JS"},
-			{name: "Learn React"},
-			{name: "Leasn SASS"}
-		];
 	})
-	.service('dataService', function() {
-
-		this.helloConsole = function() {
-			console.log('from Service');
+	.service('dataService', function($http) {
+		
+		/*
+		 * GET /api/todos - REST API call 
+		 */
+		this.getTodos = function(callback) {
+			$http.get('/api/todos')
+				.then(callback);
 		}
+
 	});
