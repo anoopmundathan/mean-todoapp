@@ -1,0 +1,26 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.header {
+	color: red;
+}
+
+
+.list {
+	width: 50%;
+	background-color: orange;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.actions {
+	width: 50%;
+}
