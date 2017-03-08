@@ -32,12 +32,19 @@ router.route('/todos/:id')
     }
     Todo.findByIdAndUpdate(id, todo, {new: true}, function(err, todo) {
       if (err) {
-        return res.status(500).send({err: err})
+        return res.status(500).send({err: err});
       }
       res.send({'todo': todo, 'message': 'Updated'});
     });
   })
   .delete(function(req, res) {
+    // get the todo._id
+    var id = req.params.id;
+    Todo.findByIdAndRemove(id, function(err) {
+      if (err) return res.status(500).send({err: err});
+
+      res.status(204).end();
+    });
   });
 
 module.exports = router;

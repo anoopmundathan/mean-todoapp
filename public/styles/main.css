@@ -15,15 +15,14 @@ body {
 	text-align: center;
 }
 
-.todo-list, 
-.todo-items {
+.todolist {
 	width: 100%;
 }
-
+ 
 .todo-items {
+	width: 100%;
 	display: flex;
 	margin: 5px;
-	border-bottom: 1px solid;
 }
 
 .todo-items-1 {
@@ -32,12 +31,26 @@ body {
 
 .todo-items-2 {
 	width: 30%;
+	text-align: right;
+}
+
+input[type="text"] {
+	min-width: 250px;
+	min-height: 30px;
 }
 
 @media screen and (min-width: 600px) {
-	.todo-items {
+	.todo-items,
+	.todo-add {
 		margin-left: auto;
 		margin-right: auto;
-		width: 80%;
+		width: 70%;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.todo-items,
+	.todo-add {
+		width: 60%;
 	}
 }
