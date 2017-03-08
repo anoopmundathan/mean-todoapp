@@ -16,12 +16,11 @@
 				<a href="" ng-click="addTodo()">Add Todo</a>
 			</div>
 
-			<div ng-repeat="todo in todos" class="todo-items">
-
+			<div ng-repeat="todo in todos | orderBy: 'completed'" ng-init="todo.completed = false" class="todo-items">
 				<div class="todo-items-1">
 					<input type="checkbox" ng-model="todo.completed">
-					<label for="" class="editing-label" ng-hide="editing">{{todo.name}}</label>
-					<input type="text" class="editing-label" ng-blur="editing=false" ng-model="todo.name" ng-show="editing" ng-change="todo.edited=true">
+					<label ng-class="{ 'editing-label': todo.completed }" ng-hide="editing">{{todo.name}}</label>
+					<input type="text" ng-blur="editing=false" ng-model="todo.name" ng-show="editing" ng-change="todo.edited=true">
 				</div>
 
 				<div class="todo-items-2">

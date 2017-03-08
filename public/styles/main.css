@@ -39,6 +39,9 @@ input[type="text"] {
 	min-height: 30px;
 }
 
+.editing-label {
+	text-decoration: line-through;
+}
 @media screen and (min-width: 600px) {
 	.todo-items,
 	.todo-add {
