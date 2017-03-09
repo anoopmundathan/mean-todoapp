@@ -9,32 +9,7 @@
 	</head>
 	<body ng-app="todoListApp">
 		<h1 class="todo-header">MY TODOs</h1>
-
-		<div ng-controller="mainCtrl" class="todo-list">
-
-			<div class="todo-add">
-				<a href="" ng-click="addTodo()">Add Todo</a>
-			</div>
-
-			<div ng-repeat="todo in todos | orderBy: 'completed'" ng-init="todo.completed = false" class="todo-items">
-				<div class="todo-items-1">
-					<input type="checkbox" ng-model="todo.completed">
-					<label ng-class="{ 'editing-label': todo.completed }" ng-hide="editing">{{todo.name}}</label>
-					<input type="text" ng-blur="editing=false" ng-model="todo.name" ng-show="editing" ng-change="todo.edited=true">
-				</div>
-
-				<div class="todo-items-2">
-					<a href="" ng-click="saveTodo(todo)">Save</a>
-					<a href="" ng-click = "editing = !editing" ng-class="{header: editing}">Edit</a>
-					<a href="" ng-click="deleteTodo(todo, $index)">Delete</a>	
-				</div>
-
-			</div>
-			<!-- End of todo-items -->
-
-		</div> 
-		<!-- End of todo-list -->
-
+		<todo></todo>
 		<script type="text/javascript" src="scripts/vendor.bundle.js"></script>
 		<script type="text/javascript" src="scripts/todo.bundle.js"></script>
 	</body>
