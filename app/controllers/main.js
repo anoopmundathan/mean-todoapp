@@ -20,8 +20,14 @@ angular.module('todoListApp')
 			});
 
 			// pass newly created array of edited todos to service to save
+			dataService.saveTodos(filteredTodo)
+				.finally($scope.resetTodos());
+		}
 
-			dataService.saveTodos(filteredTodo);
+		$scope.resetTodos = function() {
+			$scope.todos.forEach(function(todo) {
+				todo.edited = false;
+			});
 		}
 
 		$scope.deleteTodo = function(todo, index) {
